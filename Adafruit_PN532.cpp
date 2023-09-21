@@ -333,7 +333,7 @@ bool Adafruit_PN532::sendCommandCheckAck(uint8_t *cmd, uint8_t cmdlen,
   writecommand(cmd, cmdlen);
 
   // I2C TUNING
-  delay(SLOWDOWN);
+  delay(1); // fixes random errors
 
   // Wait for chip to say its ready!
   if (!waitready(timeout)) {
